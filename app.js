@@ -3,6 +3,7 @@ const app = express();
 const authroute = require('./Routes/auth_outes.js');
 const mongoose = require('mongoose');
 const passportsetup = require('./config/passport_setup.js');
+const port = process.env.PORT || 3000;
 
 //set up view engine 
 app.set('view engine', 'ejs');
@@ -24,6 +25,6 @@ app.get('/', (req, res) => {
 
 
 //listen on port 
-app.listen(3000, () => {
-    console.log("listening on 3000");
+app.listen(port, () => {
+    console.log("listening on " + port);
 });
